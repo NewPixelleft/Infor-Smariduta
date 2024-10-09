@@ -22,7 +22,7 @@ int knapsack(){
             else
                 dp[i][berat] = dp[i - 1][berat];
         }
-        cout << endl;
+        
     }
     return dp[n][berat_maks];
 }
