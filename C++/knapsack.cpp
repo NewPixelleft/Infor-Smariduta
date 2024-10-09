@@ -4,7 +4,6 @@ using namespace std;
 
 int n, berat_maks;
 vector <pair <int, int>> item;
-
 // comparator function
 // mengembalikan true jika berat member array sebelumnya lebih kecil
 bool bandingkan(pii &a, pii &b){
@@ -22,7 +21,6 @@ int knapsack(){
                 dp[i][berat] = max(item[i - 1].second + dp[i - 1][berat - item[i - 1].first], dp[i - 1][berat]);
             else
                 dp[i][berat] = dp[i - 1][berat];
-
         }
         cout << endl;
     }
@@ -41,9 +39,7 @@ int main(){
         cin >> input;
         item[i].second = input;
     }
-
-    sort(item.begin(), item.end(), bandingkan);
-    // ** INPUT **//
-
+    sort(item.begin(), item.end(), bandingkan); // mengurutkan item dari terkecil ke terbesar menurut berat
+    
     cout << knapsack();
 }
